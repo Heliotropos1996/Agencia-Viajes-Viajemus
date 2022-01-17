@@ -44,10 +44,9 @@ Controladora control = new Controladora();
         String celular = request.getParameter("celular");
         String email = request.getParameter("email");
        
-        String nombreUsu = request.getParameter("usuario");
-        String contrasenia = request.getParameter("contrasenia");
+  
         
-        control.crearCliente(nombre, apellido, direccion, dni, fecha_nac, nacionalidad, celular, email, nombreUsu, contrasenia);
+        control.crearCliente(nombre, apellido, direccion, dni, fecha_nac, nacionalidad, celular, email);
         
         response.sendRedirect("index.jsp");
     

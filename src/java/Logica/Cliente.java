@@ -7,7 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+
 
 
 
@@ -25,20 +25,11 @@ private String fecha_nac;
 private String nacionalidad;
 private String celular;
 private String email;
- @OneToOne
-private Usuario usu;
 
-    public Usuario getUsu() {
-        return usu;
-    }
-
-    public void setUsu(Usuario usu) {
-        this.usu = usu;
-    }
     public Cliente() {
     }
 
-    public Cliente(int id_cliente, String nombre, String apellido, String dirección, String dni, String fecha_nac, String nacionalidad, String celular, String email, Usuario usu) {
+    public Cliente(int id_cliente, String nombre, String apellido, String dirección, String dni, String fecha_nac, String nacionalidad, String celular, String email) {
         this.id_cliente = id_cliente;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -48,7 +39,7 @@ private Usuario usu;
         this.nacionalidad = nacionalidad;
         this.celular = celular;
         this.email = email;
-        this.usu = usu;
+      
     }
 
    

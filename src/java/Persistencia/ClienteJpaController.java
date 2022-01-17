@@ -27,8 +27,8 @@ public class ClienteJpaController implements Serializable {
         this.emf = emf;
     }
     private EntityManagerFactory emf = null;
-    
-    public ClienteJpaController() {
+
+     public ClienteJpaController() {
      
      emf = Persistence.createEntityManagerFactory("TPFinalPU");
      }
@@ -60,7 +60,7 @@ public class ClienteJpaController implements Serializable {
         } catch (Exception ex) {
             String msg = ex.getLocalizedMessage();
             if (msg == null || msg.length() == 0) {
-                Integer id = cliente.getId_cliente();
+                int id = cliente.getId_cliente();
                 if (findCliente(id) == null) {
                     throw new NonexistentEntityException("The cliente with id " + id + " no longer exists.");
                 }
@@ -73,7 +73,7 @@ public class ClienteJpaController implements Serializable {
         }
     }
 
-    public void destroy(Integer id) throws NonexistentEntityException {
+    public void destroy(int id) throws NonexistentEntityException {
         EntityManager em = null;
         try {
             em = getEntityManager();
@@ -118,7 +118,7 @@ public class ClienteJpaController implements Serializable {
         }
     }
 
-    public Cliente findCliente(Integer id) {
+    public Cliente findCliente(int id) {
         EntityManager em = getEntityManager();
         try {
             return em.find(Cliente.class, id);
