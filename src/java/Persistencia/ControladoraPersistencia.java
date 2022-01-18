@@ -24,8 +24,8 @@ public class ControladoraPersistencia {
         empleJPA.create(emple);
     }
 
-    public void crearCliente(Cliente cli, Usuario usu) {
-        usuJPA.create(usu);
+    public void crearCliente(Cliente cli) {
+       
         cliJPA.create(cli);
     }
 

@@ -33,11 +33,12 @@ public class Controladora {
         controlPersis.crearEmpleado(emple, usu);
     }
 
-    public void crearCliente(String nombre, String apellido, String direccion, String dni, String fecha_nac, String nacionalidad, String celular, String email, String nombreUsu, String contrasenia) {
+    public void crearCliente(String nombre, String apellido, String direccion, String dni, String fecha_nac, String nacionalidad, String celular, String email) {
+        
         Cliente cli = new Cliente();
-        Usuario usu = new Usuario();
-
+   
         // asigno valores a cliente
+        
         cli.setNombre(nombre);
         cli.setApellido(apellido);
         cli.setDirección(direccion);
@@ -47,13 +48,8 @@ public class Controladora {
         cli.setCelular(celular);
         cli.setEmail(email);
 
-        usu.setNombreUsu(nombreUsu);
-        usu.setContrasenia(contrasenia);
-
-        //asigno usuario a cliente
-        cli.setUsu(usu);
-
-        controlPersis.crearCliente(cli, usu);
+     
+        controlPersis.crearCliente(cli);
 
     }
 
@@ -110,8 +106,12 @@ public class Controladora {
                 }
             }
         }
-        return false;
-    }
+       
+       
+            return false; 
+        
+        }
+   
 
     public void crearServicio(String nombre, String descrip, String destino, String fecha, double costo) {
 
